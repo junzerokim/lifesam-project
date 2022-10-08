@@ -1,38 +1,73 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  font-family: 'Kakao';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  width: 100%;
+  background-color: red;
 }
 
-.App-link {
-  color: #61dafb;
+.cellLeaderArea {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cellLeader {
+  font-size: 30px;
+}
+
+.cellMemberBox {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.cellMember {
+  font-size: 20px;
+  line-height: 1.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.memberInfo {
+  width: 100px;
+  height: 50px;
+  background-color: darkgray;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cellLeaderBox {
+  width: 200px;
+  height: 75px;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.memberName {
+  margin-right: 10px;
+}
+
+.memberAge {
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
