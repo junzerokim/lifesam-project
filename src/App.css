@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   background-color: red;
 }
 
@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-around;
   flex: 1;
+  background-color: blue;
 }
 
 .cellLeader {
@@ -23,7 +24,6 @@
 }
 
 .cellMemberBox {
-  width: 100vw;
   display: flex;
   justify-content: space-around;
   flex: 1;
@@ -43,14 +43,14 @@
   width: 100px;
   height: 50px;
   background-color: darkgray;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .cellLeaderBox {
-  width: 200px;
+  width: 150px;
   height: 75px;
   background-color: skyblue;
   display: flex;
