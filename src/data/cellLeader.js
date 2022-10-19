@@ -131,7 +131,7 @@ export const leader = [
   },
   {
     id: 27,
-    name: '이유진A',
+    name: '이유진',
     age: 24,
   },
   {

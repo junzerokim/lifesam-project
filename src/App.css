@@ -5,69 +5,30 @@
 
 .container {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-  background-color: red;
-}
-
-.cellLeaderArea {
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  flex: 1;
-  background-color: blue;
 }
 
 .cellLeader {
-  font-size: 30px;
+  line-height: 1.8;
+  margin-right: 5px;
 }
 
 .cellMemberBox {
-  display: flex;
-  justify-content: space-around;
-  flex: 1;
+  line-height: 1.8;
 }
 
-.cellMember {
-  font-size: 20px;
-  line-height: 1.7;
+.cellMemberContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  flex: 1;
 }
 
-.memberInfo {
-  width: 100px;
-  height: 50px;
-  background-color: darkgray;
+.cellMemberArea {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
 }
 
-.cellLeaderBox {
-  width: 150px;
-  height: 75px;
-  background-color: skyblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+.cellMemberInfo {
+  margin-right: 5px;
 }
 
-.memberName {
-  margin-right: 10px;
-}
-
-.memberAge {
-  font-size: 14px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
+.cell {
+  font-size: 10px;
 }
