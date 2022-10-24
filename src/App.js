@@ -71,6 +71,7 @@ function App() {
           {leader.map((e) => {
             let cell = [];
             let num = 0;
+            cellMembers = cellMembers.sort(() => Math.random() - 0.5);
             for (let i = 0; i < cellMembers.length; i++) {
               if (num > 2) {
                 continue;
@@ -90,7 +91,6 @@ function App() {
                   num++;
                 }
               }
-              cellMembers = cellMembers.sort(() => Math.random() - 0.5);
             }
             result.set(e.name, cell);
             cellMembers = cellMembers.filter((x) => !cell.includes(x));
