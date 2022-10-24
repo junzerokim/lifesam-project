@@ -16,7 +16,7 @@ function App() {
   let cellLeader = leader[0];
 
   // 셀원 목록
-  let cellMember = member;
+  // let cellMember = member;
 
   // 셀장 나이 조건에 맞게 분류된 셀원 목록
   let sortCellMember = [];
@@ -31,8 +31,6 @@ function App() {
     randomProgram();
     return sortCellMember;
   })();
-
-  console.log(cellMember);
 
   function randomProgram() {
     let result = [];
@@ -60,28 +58,80 @@ function App() {
     return cell;
   }
 
+  let cellMembers = member.map((e) => {
+    return e;
+  });
+
+  let result = new Map();
+
   return (
     <div className="App">
       <div className="container">
         <div className="cellLeaderArea">
           {leader.map((e) => {
-            return (
-              <div className="cellLeaderBox">
-                <div className="cellLeader">
-                  {e.age} {e.name} 셀장 -
-                  <div className="cell">
-                    {member.map((v) => {
-                      let cell = [];
-                      if (v.age >= e.age - 5 && v.age <= e.age + 2) {
-                        cell.push(v.name);
-                      }
-                      return cell;
-                    })}
-                  </div>
-                </div>
-              </div>
+            let cell = [];
+            let num = 0;
+            for (let i = 0; i < cellMembers.length; i++) {
+              if (num > 2) {
+                continue;
+              }
+              if (cellMembers[i].age >= e.age - 5 && cellMembers[i].age <= e.age + 2) {
+                if (cell.length) {
+                  for (let j = 0; j < cell.length; j++) {
+                    if (cell[j].attendenceRate === cellMembers[i].attendenceRate) {
+                      break;
+                    }
+                    cell.push(cellMembers[i]);
+                    num++;
+                    break;
+                  }
+                } else {
+                  cell.push(cellMembers[i]);
+                  num++;
+                }
+              }
+              cellMembers = cellMembers.sort(() => Math.random() - 0.5);
+            }
+            result.set(e.name, cell);
+            cellMembers = cellMembers.filter((x) => !cell.includes(x));
+          })}
+          {leader.map((e) => {
+            if (!cellMembers.length) {
+              return false;
+            }
+            cellMembers = cellMembers.sort(() => Math.random() - 0.5);
+            for (let j = 0; j < cellMembers.length; j++) {
+              if (cellMembers[j].age >= e.age - 5 && cellMembers[j].age <= e.age + 2) {
+                let tempcell = cellMembers[j];
+                let cell = result.get(e.name);
+                cell.push(tempcell);
+                result.set(
+                  e.name,
+                  cell.map((e) => e)
+                );
+                //cellMembers = cell.includes(x));
+                cellMembers = cellMembers.filter((e) => e.name !== tempcell.name);
+                break;
+              }
+            }
+          })}
+          {result.forEach((value, key, map) => {
+            console.log(
+              key +
+                ' => ' +
+                value.map((e) => {
+                  return e.name;
+                })
             );
           })}
+
+          {console.log('조건 미충족 인원 : ' + cellMembers[0].name)}
+          <div className="cellLeaderBox">
+            <div className="cellLeader"></div>
+          </div>
+          {/* <button type="button" className="refreshBtn" onclick={window.location.reload()}>
+            refresh
+          </button> */}
         </div>
       </div>
     </div>
