@@ -73,7 +73,7 @@ function App() {
             let num = 0;
             cellMembers = cellMembers.sort(() => Math.random() - 0.5);
             for (let i = 0; i < cellMembers.length; i++) {
-              if (num > 2) {
+              if (num > 1) {
                 continue;
               }
               if (cellMembers[i].age >= e.age - 5 && cellMembers[i].age <= e.age + 2) {
@@ -118,14 +118,18 @@ function App() {
           {result.forEach((value, key, map) => {
             console.log(
               key +
-                ' => ' +
+                ' 셀장 => ' +
                 value.map((e) => {
                   return e.name;
                 })
             );
           })}
+          {(function notAssigned() {
+            for (let i = 0; i < cellMembers.length; i++) {
+              console.log('조건 미충족 인원😭 => ' + cellMembers[i].name);
+            }
+          })()}
 
-          {console.log('조건 미충족 인원 : ' + cellMembers[0].name)}
           <div className="cellLeaderBox">
             <div className="cellLeader"></div>
           </div>
