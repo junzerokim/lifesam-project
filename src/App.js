@@ -109,7 +109,6 @@ function App() {
                   e.name,
                   cell.map((e) => e)
                 );
-                //cellMembers = cell.includes(x));
                 cellMembers = cellMembers.filter((e) => e.name !== tempcell.name);
                 break;
               }
@@ -133,9 +132,6 @@ function App() {
           <div className="cellLeaderBox">
             <div className="cellLeader"></div>
           </div>
-          {/* <button type="button" className="refreshBtn" onclick={window.location.reload()}>
-            refresh
-          </button> */}
         </div>
       </div>
     </div>

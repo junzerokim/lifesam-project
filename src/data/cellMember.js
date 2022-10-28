@@ -220,7 +220,7 @@ export const member = [
     id: 32,
     name: '김준영',
     gender: 'male',
-    age: 30,
+    age: 29,
     attendenceRate: 1,
   },
   {
@@ -528,7 +528,7 @@ export const member = [
     id: 76,
     name: '안지현',
     gender: 'male',
-    age: 31,
+    age: 32,
     attendenceRate: 1,
   },
   {
