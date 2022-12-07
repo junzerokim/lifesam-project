@@ -64,9 +64,15 @@ function App() {
 
   let result = new Map();
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <div className="App">
+      <h3>생명샘교회 청년진 셀 편성 프로그램 ⛪️</h3>
       <div className="container">
+        <button onClick={refreshPage}>배정</button>
         <div className="cellLeaderArea">
           {leader.map((e) => {
             let cell = [];
